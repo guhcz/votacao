@@ -29,8 +29,8 @@ public class PautaService {
         PautaModel pautaAtualizada = PautaModel.builder()
                 .assunto(pauta.getAssunto() != null ? pauta.getAssunto() :
                         pautaEntity.getAssunto())
-                .quantidadeDeVotosNecassarios(pauta.getQuantidadeDeVotosNecassarios() != null ? pauta.getQuantidadeDeVotosNecassarios() :
-                        pautaEntity.getQuantidadeDeVotosNecassarios())
+                .quantidadeDeVotosNecessarios(pauta.getQuantidadeDeVotosNecessarios() != null ? pauta.getQuantidadeDeVotosNecessarios() :
+                        pautaEntity.getQuantidadeDeVotosNecessarios())
                 .dataInicio(pauta.getDataInicio() != null ? pauta.getDataInicio() :
                         pautaEntity.getDataInicio())
                 .dataEncerramento(pauta.getDataEncerramento() != null ? pauta.getDataEncerramento() :
@@ -46,7 +46,7 @@ public class PautaService {
     }
 
     public void excluirPautaPeloAssunto(String assunto) {
-        repository.deletarByAssunto(assunto);
+        repository.deleteByAssunto(assunto);
     }
 
     public List<PautaExibicaoDto> buscarTodasPautas() {
@@ -66,8 +66,8 @@ public class PautaService {
                 ));
     }
 
-    public List<PautaExibicaoDto> buscarPautaPeloNumeroDeVotos(Integer quantidadeDeVotosNecassarios) {
-        List<PautaModel> pauta = repository.findByNumeroDeVotos(quantidadeDeVotosNecassarios);
+    public List<PautaExibicaoDto> buscarPautaPeloNumeroDeVotos(Integer quantidadeDeVotosNecessarios) {
+        List<PautaModel> pauta = repository.findByQuantidadeDeVotosNecessarios(quantidadeDeVotosNecessarios);
 
         if (pauta.isEmpty()) {
             throw new RuntimeException("Pauta nao encontrada!");

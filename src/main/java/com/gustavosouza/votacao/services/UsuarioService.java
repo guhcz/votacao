@@ -74,7 +74,4 @@ public class UsuarioService {
                 .map(UsuarioExibicaoDto::new)
                 .toList();
     }
-
-
-
 }

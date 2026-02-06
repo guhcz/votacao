@@ -38,7 +38,7 @@ public class UsuarioController {
     @DeleteMapping("/deletar/{email}")
     public ResponseEntity<Void> deletarUsuarioPorEmail(@PathVariable String email) {
         usuarioService.deletarUsuarioPorEmail(email);
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @GetMapping("/buscar")

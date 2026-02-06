@@ -10,7 +10,7 @@ public record PautaCadastroDto(
         String assunto,
 
         @NotNull(message = "Defini a quantidade de votos necessários!")
-        Integer quantidadeDeVotosNecassarios,
+        Integer quantidadeDeVotosNecessarios,
 
         @NotNull(message = "A data de inicio precisa ser preenchida!")
         LocalDate dataInicio,

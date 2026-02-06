@@ -22,7 +22,7 @@ public class PautaModel {
     private String assunto;
 
     @Column(name = "VOTOS_NECESSARIOS")
-    private Integer quantidadeDeVotosNecassarios;
+    private Integer quantidadeDeVotosNecessarios;
 
     @Column(name = "DATA_INICIO")
     private LocalDate dataInicio;

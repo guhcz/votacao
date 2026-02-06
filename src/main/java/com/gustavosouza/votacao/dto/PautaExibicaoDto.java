@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 public record PautaExibicaoDto(
         String assunto,
-        Integer quantidadeDeVotosNecassarios,
+        Integer quantidadeDeVotosNecessarios,
         LocalDate dataInicio,
         LocalDate dataEncerramento
 ) {
@@ -14,7 +14,7 @@ public record PautaExibicaoDto(
     public PautaExibicaoDto(PautaModel pauta){
         this(
                 pauta.getAssunto(),
-                pauta.getQuantidadeDeVotosNecassarios(),
+                pauta.getQuantidadeDeVotosNecessarios(),
                 pauta.getDataInicio(),
                 pauta.getDataEncerramento()
         );

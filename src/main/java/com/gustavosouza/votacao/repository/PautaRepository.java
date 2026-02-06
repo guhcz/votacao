@@ -16,11 +16,11 @@ public interface PautaRepository extends JpaRepository<PautaModel, Long> {
     void deleteById (Long id);
 
     @Transactional
-    void deletarByAssunto (String assunto);
+    void deleteByAssunto (String assunto);
 
     Optional<PautaModel> findByAssunto(String assunto);
 
-    List<PautaModel> findByNumeroDeVotos(Integer quantidadeDeVotosNecassarios);
+    List<PautaModel> findByQuantidadeDeVotosNecessarios(Integer quantidadeDeVotosNecessarios);
 
     List<PautaModel> findByDataInicioBetween (LocalDate primeiraData, LocalDate segundaData);
 
